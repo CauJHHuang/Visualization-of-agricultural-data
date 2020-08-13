@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test2</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>>
+
+</head>
+<body>
+<div>
+    <p id="demo_1" >demo-1</p>
+    <input type="button" id="hjh_test_btn" value="hjh_test">
+</div>
+</body>
+</html>
+<script>
+    function hjh_test(){
+        var settings = {
+          "url": "http://127.0.0.1:1000/htmlUpdataStatistics",
+          "method": "POST",
+          "timeout": 0,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "data": JSON.stringify({"endDate":"20190215"}),
+        };
+
+        $.ajax(settings).done(function (response) {
+          console.log(response);
+        });
+    }
+    document.getElementById('hjh_test_btn').onclick=hjh_test;
+</script>
